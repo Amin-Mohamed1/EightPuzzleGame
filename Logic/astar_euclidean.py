@@ -4,7 +4,7 @@ from typing import List
 
 class AStarEuclideanPuzzleSolver(PuzzleSolver):
     def __init__(self, initial_state: List[List[int]]):
-        # Initialize the DFS Puzzle Solver with the given initial state
+        # Initialize the Astar Euclidean Puzzle Solver with the given initial state
         super().__init__(initial_state)
 
     def solve(self) -> None:

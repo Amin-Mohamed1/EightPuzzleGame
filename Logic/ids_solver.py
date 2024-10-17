@@ -1,10 +1,11 @@
+import time
+from typing import List, Tuple, Dict
 from Logic.puzzle_solver import PuzzleSolver
-from typing import List
 
 
-class AStarManhattanPuzzleSolver(PuzzleSolver):
+class IDSPuzzleSolver(PuzzleSolver):
     def __init__(self, initial_state: List[List[int]]):
-        # Initialize the AStar Manhattan Puzzle Solver with the given initial state
+        # Initialize the IDS Puzzle Solver with the given initial state
         super().__init__(initial_state)
 
     def solve(self) -> None:
