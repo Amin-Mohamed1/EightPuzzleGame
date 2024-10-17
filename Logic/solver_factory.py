@@ -32,14 +32,24 @@ def solve_puzzle(method_name: str, initial_state: List[List[int]]) -> dict:
         "runtime": solver.get_runtime(),
         "depth": solver.get_depth(),
         "num_nodes": solver.get_number_of_nodes(),
+        "cost": solver.cost,
     }
 
 
 if __name__ == "__main__":
-    initial_state = [[1, 2, 3], [4, 5, 6], [7, 0, 8]]
-    result = solve_puzzle("DFS", initial_state)
+    initial_state = [[1, 6, 5],
+                     [7, 0, 2],
+                     [4, 8, 3]]
 
+    result = solve_puzzle("DFS", initial_state)
     solution_path = result['solution_path']
     runtime = result['runtime']
     depth = result['depth']
     num_nodes = result['num_nodes']
+    cost = result['cost']
+
+    print(solution_path)
+    print(runtime)
+    print(depth)
+    print(num_nodes)
+    print(cost)

@@ -5,11 +5,14 @@ from typing import List
 class PuzzleSolver(ABC):
     def __init__(self, initial_state: List[List[int]]):
         self.initial_state = initial_state
-        self.goal_state = [[1, 2, 3], [4, 5, 6], [7, 8, 0]]
+        self.goal_state = [[0, 1, 2], [3, 4, 5], [6, 7, 8]]
         self.num_nodes = 0  # Total number of nodes expanded
         self.max_search_depth = 0  # Maximum depth reached during the search
         self.run_time = 0  # Total runtime
         self.solution_path = []  # Path from initial state to goal state
+        self.explored_set = set()  # To keep track of Explored Nodes
+        self.visited_set = set()  # To keep track of Visited Nodes
+        self.cost = 0  # Cost of path from initial state to goal state
 
     @abstractmethod
     def solve(self) -> None:
