@@ -3,5 +3,5 @@ This project implements various Artificial Intelligence (AI) algorithms to solve
 
 - **Breadth-First Search (BFS)**
 - **Depth-First Search (DFS)**
-- **A* Search**
+- **Astar Search**
 - **Iterative Deepening Search (IDS)**
