@@ -37,11 +37,11 @@ def solve_puzzle(method_name: str, initial_state: List[List[int]]) -> dict:
 
 
 if __name__ == "__main__":
-    initial_state = [[1, 6, 5],
-                     [7, 0, 2],
-                     [4, 8, 3]]
+    initial_state = [[1, 2, 0],
+                     [3, 4, 5],
+                     [6, 7, 8]]
 
-    result = solve_puzzle("DFS", initial_state)
+    result = solve_puzzle("IDS", initial_state)
     solution_path = result['solution_path']
     runtime = result['runtime']
     depth = result['depth']
