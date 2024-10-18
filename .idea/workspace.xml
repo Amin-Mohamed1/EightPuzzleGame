@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cc1c50d7-3d56-49fd-9cfe-c5f3bb97b6ad" name="Changes" comment="Initial Commit" />
+    <list default="true" id="cc1c50d7-3d56-49fd-9cfe-c5f3bb97b6ad" name="Changes" comment="Initial Commit">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Logic/dfs_solver.py" beforeDir="false" afterPath="$PROJECT_DIR$/Logic/dfs_solver.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Logic/utils.py" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
