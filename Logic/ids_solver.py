@@ -156,7 +156,6 @@ class IDSPuzzleSolver(PuzzleSolver):
         # Convert tuples back to lists for consistency
         return [list(map(list, state)) for state in path]
 
-    # Getters for retrieving solver statistics and results
     def get_number_of_nodes(self) -> int:
         """Return the total number of nodes explored during the search."""
         return self.num_nodes
