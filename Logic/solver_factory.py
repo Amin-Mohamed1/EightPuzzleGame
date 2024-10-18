@@ -1,10 +1,10 @@
 from typing import List
-from Logic.astar_euclidean import AStarEuclideanPuzzleSolver
-from Logic.astar_manhattan import AStarManhattanPuzzleSolver
-from Logic.bfs_solver import BFSPuzzleSolver
-from Logic.dfs_solver import DFSPuzzleSolver
-from Logic.ids_solver import IDSPuzzleSolver
-from Logic.puzzle_solver import PuzzleSolver
+from astar_euclidean import AStarEuclideanPuzzleSolver
+from astar_manhattan import AStarManhattanPuzzleSolver
+from bfs_solver import BFSPuzzleSolver
+from dfs_solver import DFSPuzzleSolver
+from ids_solver import IDSPuzzleSolver
+from puzzle_solver import PuzzleSolver
 
 
 class SolverFactory:

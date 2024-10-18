@@ -1,4 +1,4 @@
-from Logic.puzzle_solver import PuzzleSolver
+from puzzle_solver import PuzzleSolver
 from typing import List
 
 
