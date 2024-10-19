@@ -1,6 +1,6 @@
 import time
 from typing import List, Tuple, Dict
-from puzzle_solver import PuzzleSolver
+from EightPuzzleGame.Logic.puzzle_solver import PuzzleSolver
 
 
 class IDSPuzzleSolver(PuzzleSolver):

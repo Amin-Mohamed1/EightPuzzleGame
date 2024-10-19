@@ -1,6 +1,6 @@
 import time
 
-from puzzle_solver import PuzzleSolver
+from EightPuzzleGame.Logic.puzzle_solver import PuzzleSolver
 from typing import List
 
 
@@ -13,6 +13,9 @@ class BFSPuzzleSolver(PuzzleSolver):
         self.start_time = 0  # Start time of the search
 
     def solve(self) -> None:
+        if self.__is_solved(self.initial_state):
+            self.solution_path = [self.initial_state]
+            return
         # Solve the puzzle using Breadth First Search
         if not self.__bfs():
             self.reset_solver()
@@ -68,7 +71,7 @@ class BFSPuzzleSolver(PuzzleSolver):
                         self.parent_map[self.__convert_to_tuple_of_tuples(new_state)] = self.__convert_to_tuple_of_tuples(current_state)
                         self.queue.append(new_state)
                         if self.__is_solved(new_state):
-                            self.run_time = time.time() - self.start_time
+                            self.run_time = time.perf_counter() - self.start_time
                             self.__generate_solution_path(new_state)
                             return True
         return False
@@ -77,7 +80,7 @@ class BFSPuzzleSolver(PuzzleSolver):
         self.parent_map = {self.__convert_to_tuple_of_tuples(self.initial_state): None}  # To store the parent of
         # each state
         self.queue = [self.initial_state]  # Initialize an empty queue
-        self.start_time = time.time()  # Start the timer
+        self.start_time = time.perf_counter()  # Start the timer
         self.visited_set.add(self.__convert_to_tuple_of_tuples(self.initial_state))
         while self.queue:
             queue_size = len(self.queue)

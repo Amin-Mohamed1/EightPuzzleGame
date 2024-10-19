@@ -1,4 +1,4 @@
-from puzzle_solver import PuzzleSolver
+from EightPuzzleGame.Logic.puzzle_solver import PuzzleSolver
 from typing import List
 
 
@@ -8,7 +8,7 @@ class AStarManhattanPuzzleSolver(PuzzleSolver):
         super().__init__(initial_state)
 
     def solve(self) -> None:
-        return
+        pass
 
     def get_number_of_nodes(self) -> int:
         return 0

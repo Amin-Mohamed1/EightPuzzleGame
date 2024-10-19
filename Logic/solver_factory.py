@@ -1,10 +1,10 @@
 from typing import List
-from astar_euclidean import AStarEuclideanPuzzleSolver
-from astar_manhattan import AStarManhattanPuzzleSolver
-from bfs_solver import BFSPuzzleSolver
-from dfs_solver import DFSPuzzleSolver
-from ids_solver import IDSPuzzleSolver
-from puzzle_solver import PuzzleSolver
+from EightPuzzleGame.Logic.astar_euclidean import AStarEuclideanPuzzleSolver
+from EightPuzzleGame.Logic.astar_manhattan import AStarManhattanPuzzleSolver
+from EightPuzzleGame.Logic.bfs_solver import BFSPuzzleSolver
+from EightPuzzleGame.Logic.dfs_solver import DFSPuzzleSolver
+from EightPuzzleGame.Logic.ids_solver import IDSPuzzleSolver
+from EightPuzzleGame.Logic.puzzle_solver import PuzzleSolver
 
 
 class SolverFactory:
@@ -36,20 +36,20 @@ def solve_puzzle(method_name: str, initial_state: List[List[int]]) -> dict:
     }
 
 
-if __name__ == "__main__":
-    initial_state = [[1, 2, 0],
-                     [3, 4, 5],
-                     [6, 7, 8]]
-
-    result = solve_puzzle("IDS", initial_state)
-    solution_path = result['solution_path']
-    runtime = result['runtime']
-    depth = result['depth']
-    num_nodes = result['num_nodes']
-    cost = result['cost']
-
-    print(solution_path)
-    print(runtime)
-    print(depth)
-    print(num_nodes)
-    print(cost)
+# if __name__ == "__main__":
+#     initial_state = [[1, 2, 0],
+#                      [3, 4, 5],
+#                      [6, 7, 8]]
+#
+#     result = solve_puzzle("IDS", initial_state)
+#     solution_path = result['solution_path']
+#     runtime = result['runtime']
+#     depth = result['depth']
+#     num_nodes = result['num_nodes']
+#     cost = result['cost']
+#
+#     print(solution_path)
+#     print(runtime)
+#     print(depth)
+#     print(num_nodes)
+#     print(cost)
