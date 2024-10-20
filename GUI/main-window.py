@@ -1,9 +1,9 @@
 import random
 import sys
 from functools import partial
-from PyQt5.QtWidgets import QDialog, QApplication
+from PyQt5.QtWidgets import QDialog, QApplication, QButtonGroup
 from PyQt5.uic import loadUi
-from Logic.solver_factory import solve_puzzle
+from EightPuzzleGame.Logic.solver_factory import solve_puzzle
 
 
 class MainWindow(QDialog):
@@ -16,16 +16,18 @@ class MainWindow(QDialog):
         self.add_buttons()
         self.randomize()
 
+        self.manhattan_radio.setChecked(True)
+
         self.random_button.clicked.connect(self.randomize)
         self.submit_button.clicked.connect(self.read_input)
         self.next_button.clicked.connect(self.move_state_forward)
         self.prev_button.clicked.connect(self.move_state_backward)
         self.back_button.clicked.connect(partial(self.swap_pages, True))
 
-        self.dfs_button.clicked.connect(partial(self.solve, "DFS"))
-        self.bfs_button.clicked.connect(partial(self.solve, "BFS"))
-        self.ids_button.clicked.connect(partial(self.solve, "IDS"))
-        self.a_star_button.clicked.connect(self.solve)
+        self.dfs_button.clicked.connect(partial(self.solve, "DFSPuzzleSolver"))
+        self.bfs_button.clicked.connect(partial(self.solve, "BFSPuzzleSolver"))
+        self.ids_button.clicked.connect(partial(self.solve, "IDSPuzzleSolver"))
+        self.a_star_button.clicked.connect(self.handle_radio)
 
     def add_buttons(self):
         self.current_state = [[self.board_button1, self.board_button2, self.board_button3],
@@ -109,6 +111,17 @@ class MainWindow(QDialog):
                     self.change_button_color(i, j, "rgb(74, 238, 148)")
                 else:
                     self.change_button_color(i, j, "#558DC0")
+
+    def get_selected_radio(self):
+        if self.manhattan_radio.isChecked():
+            return "AStarManhattan"
+        elif self.euclidean_radio.isChecked():
+            return "AStarEuclidean"
+        else:
+            return "AStarMisplacedTiles"
+
+    def handle_radio(self):
+        self.solve(self.get_selected_radio())
 
 
 if __name__ == "__main__":

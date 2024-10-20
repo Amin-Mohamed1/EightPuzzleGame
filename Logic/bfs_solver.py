@@ -1,6 +1,6 @@
 import time
 
-from Logic.puzzle_solver import PuzzleSolver
+from EightPuzzleGame.Logic.puzzle_solver import PuzzleSolver
 from typing import List
 
 

@@ -29,7 +29,11 @@
    </size>
   </property>
   <property name="windowTitle">
-   <string>8-Game</string>
+   <string>8-Puzzle</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>logo.png</normaloff>logo.png</iconset>
   </property>
   <property name="styleSheet">
    <string notr="true"/>
@@ -148,6 +152,7 @@ border-radius:5px;</string>
           <widget class="QFrame" name="gridFrame">
            <property name="styleSheet">
             <string notr="true">QPushButton{
+font: 12pt &quot;Snap ITC&quot;;
 background-color:#558DC0;
 border-radius:4px;
 }
@@ -490,9 +495,17 @@ border-radius:5px;
 border-radius:5px;</string>
         </property>
         <widget class="QWidget" name="algorithms_page">
-         <layout class="QVBoxLayout" name="verticalLayout" stretch="0,0,0,0,0,0,0,0,0">
+         <property name="styleSheet">
+          <string notr="true">QPushButton{
+font: 75 12pt &quot;MS Shell Dlg 2&quot;;
+}</string>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout" stretch="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0">
           <property name="spacing">
            <number>0</number>
+          </property>
+          <property name="sizeConstraint">
+           <enum>QLayout::SetDefaultConstraint</enum>
           </property>
           <property name="leftMargin">
            <number>10</number>
@@ -523,6 +536,22 @@ border-radius:5px;</string>
            </spacer>
           </item>
           <item>
+           <spacer name="verticalSpacer_10">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeType">
+             <enum>QSizePolicy::Fixed</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>120</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
            <widget class="QLabel" name="timer_label">
             <property name="minimumSize">
              <size>
@@ -538,7 +567,8 @@ border-radius:5px;</string>
             </property>
             <property name="styleSheet">
              <string notr="true">background-color: rgb(217, 217, 217);
-border-radius: 5px;</string>
+border-radius: 5px;
+font: 75 14pt &quot;MS Shell Dlg 2&quot;;</string>
             </property>
             <property name="text">
              <string>Timer</string>
@@ -559,7 +589,7 @@ border-radius: 5px;</string>
             <property name="sizeHint" stdset="0">
              <size>
               <width>20</width>
-              <height>10</height>
+              <height>37</height>
              </size>
             </property>
            </spacer>
@@ -594,6 +624,22 @@ border-radius:5px;</string>
            </widget>
           </item>
           <item>
+           <spacer name="verticalSpacer_6">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeType">
+             <enum>QSizePolicy::Fixed</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>16</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
            <widget class="QPushButton" name="bfs_button">
             <property name="minimumSize">
              <size>
@@ -618,6 +664,22 @@ border-radius:5px;</string>
              <string>BFS</string>
             </property>
            </widget>
+          </item>
+          <item>
+           <spacer name="verticalSpacer_7">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeType">
+             <enum>QSizePolicy::Fixed</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>16</height>
+             </size>
+            </property>
+           </spacer>
           </item>
           <item>
            <widget class="QPushButton" name="ids_button">
@@ -646,6 +708,22 @@ border-radius:5px;</string>
            </widget>
           </item>
           <item>
+           <spacer name="verticalSpacer_8">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeType">
+             <enum>QSizePolicy::Fixed</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>16</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
            <widget class="QPushButton" name="a_star_button">
             <property name="minimumSize">
              <size>
@@ -667,9 +745,75 @@ border-radius:5px;</string>
 border-radius:5px;</string>
             </property>
             <property name="text">
-             <string>A*</string>
+             <string>A-Star</string>
             </property>
            </widget>
+          </item>
+          <item>
+           <layout class="QGridLayout" name="gridLayout_2">
+            <property name="topMargin">
+             <number>10</number>
+            </property>
+            <property name="bottomMargin">
+             <number>0</number>
+            </property>
+            <property name="spacing">
+             <number>7</number>
+            </property>
+            <item row="1" column="0" alignment="Qt::AlignLeft|Qt::AlignTop">
+             <widget class="QRadioButton" name="misplaced_radio">
+              <property name="text">
+               <string>Misplaced</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="0" alignment="Qt::AlignLeft|Qt::AlignTop">
+             <widget class="QRadioButton" name="manhattan_radio">
+              <property name="text">
+               <string>Manhattan</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="1" alignment="Qt::AlignLeft|Qt::AlignTop">
+             <widget class="QRadioButton" name="euclidean_radio">
+              <property name="text">
+               <string>Euclidean</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <spacer name="verticalSpacer_5">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeType">
+             <enum>QSizePolicy::Expanding</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <spacer name="verticalSpacer_9">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeType">
+             <enum>QSizePolicy::Fixed</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>10</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
           </item>
           <item>
            <widget class="QPushButton" name="play_button">

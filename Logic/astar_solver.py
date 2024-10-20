@@ -1,5 +1,5 @@
 from typing import List, Callable, Tuple, Dict
-from Logic.puzzle_solver import PuzzleSolver
+from EightPuzzleGame.Logic.puzzle_solver import PuzzleSolver
 
 
 class AStarPuzzleSolver(PuzzleSolver):

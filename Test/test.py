@@ -1,5 +1,5 @@
-from Logic import bfs_solver
-from Logic.solver_factory import solve_puzzle
+from EightPuzzleGame.Logic import bfs_solver
+from EightPuzzleGame.Logic.solver_factory import solve_puzzle
 
 
 def test_bfs():
@@ -23,7 +23,7 @@ def test_unsolvable_puzzle():
 
 def test_factory_with_bfs():
     initial_state = [[1, 2, 5], [3, 4, 0], [6, 7, 8]]
-    result = solve_puzzle("BFS", initial_state)
+    result = solve_puzzle("BFSPuzzleSolver", initial_state)
     assert result['depth'] == 3
     assert result['cost'] == 3
     assert result['solution_path'] == [[[1, 2, 5], [3, 4, 0], [6, 7, 8]], [[1, 2, 0], [3, 4, 5], [6, 7, 8]],

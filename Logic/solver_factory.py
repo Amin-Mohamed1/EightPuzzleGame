@@ -1,9 +1,9 @@
 from typing import List
-from Logic.astar_solver import AStarPuzzleSolver
-from Logic.bfs_solver import BFSPuzzleSolver
-from Logic.dfs_solver import DFSPuzzleSolver
-from Logic.ids_solver import IDSPuzzleSolver
-from Logic.heuristics import manhattan_heuristic, euclidean_heuristic, misplaced_tiles_heuristic
+from EightPuzzleGame.Logic.astar_solver import AStarPuzzleSolver
+from EightPuzzleGame.Logic.bfs_solver import BFSPuzzleSolver
+from EightPuzzleGame.Logic.dfs_solver import DFSPuzzleSolver
+from EightPuzzleGame.Logic.ids_solver import IDSPuzzleSolver
+from EightPuzzleGame.Logic.heuristics import manhattan_heuristic, euclidean_heuristic, misplaced_tiles_heuristic
 
 
 def solve_puzzle(method_name: str, initial_state: List[List[int]]) -> dict:
