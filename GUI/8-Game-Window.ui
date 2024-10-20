@@ -294,7 +294,7 @@ border-radius:5px;
               </property>
               <property name="icon">
                <iconset>
-                <normaloff>C:/Users/Omar/Downloads/WhatsApp Image 2024-10-13 at 18.25.53_44f7b549.jpg</normaloff>C:/Users/Omar/Downloads/WhatsApp Image 2024-10-13 at 18.25.53_44f7b549.jpg</iconset>
+                <normaloff>right_arrow.jpg</normaloff>right_arrow.jpg</iconset>
               </property>
               <property name="iconSize">
                <size>
@@ -380,7 +380,7 @@ border-radius:5px;
               </property>
               <property name="icon">
                <iconset>
-                <normaloff>C:/Users/Omar/Downloads/WhatsApp Image 2024-10-13 at 18.25.45_2f993a40.jpg</normaloff>C:/Users/Omar/Downloads/WhatsApp Image 2024-10-13 at 18.25.45_2f993a40.jpg</iconset>
+                <normaloff>left_arrow.jpg</normaloff>left_arrow.jpg</iconset>
               </property>
               <property name="iconSize">
                <size>
