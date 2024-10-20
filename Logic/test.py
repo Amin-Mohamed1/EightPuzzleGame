@@ -1,5 +1,5 @@
-from EightPuzzleGame.Logic import bfs_solver
-from EightPuzzleGame.Logic.solver_factory import solve_puzzle
+from Logic import bfs_solver
+from Logic.solver_factory import solve_puzzle
 
 
 def test_bfs():

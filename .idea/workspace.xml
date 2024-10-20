@@ -5,9 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cc1c50d7-3d56-49fd-9cfe-c5f3bb97b6ad" name="Changes" comment="Initial Commit">
+      <change afterPath="$PROJECT_DIR$/Logic/astar_solver.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Logic/heuristics.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Logic/utils.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/main-window.py" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/main-window.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Logic/astar_euclidean.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Logic/astar_manhattan.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Logic/bfs_solver.py" beforeDir="false" afterPath="$PROJECT_DIR$/Logic/bfs_solver.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Logic/dfs_solver.py" beforeDir="false" afterPath="$PROJECT_DIR$/Logic/dfs_solver.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logic/utils.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Logic/ids_solver.py" beforeDir="false" afterPath="$PROJECT_DIR$/Logic/ids_solver.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Logic/solver_factory.py" beforeDir="false" afterPath="$PROJECT_DIR$/Logic/solver_factory.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Logic/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/Logic/test.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,20 +54,43 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.solver_factory.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Users/Yousef/Desktop/Eight Puzzle/Logic"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.main-window.executor&quot;: &quot;Run&quot;,
+    &quot;Python.solver_factory.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Yousef/Desktop/Eight Puzzle/Logic&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Yousef\Desktop\Eight Puzzle\Logic" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.solver_factory">
+    <configuration name="main-window" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Eight Puzzle" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/GUI" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/GUI/main-window.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="solver_factory" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Eight Puzzle" />
       <option name="ENV_FILES" value="" />
@@ -84,6 +116,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.solver_factory" />
+        <item itemvalue="Python.main-window" />
       </list>
     </recent_temporary>
   </component>

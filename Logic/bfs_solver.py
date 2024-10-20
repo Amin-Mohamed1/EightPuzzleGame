@@ -1,6 +1,6 @@
 import time
 
-from EightPuzzleGame.Logic.puzzle_solver import PuzzleSolver
+from Logic.puzzle_solver import PuzzleSolver
 from typing import List
 
 
@@ -97,4 +97,7 @@ class BFSPuzzleSolver(PuzzleSolver):
         self.max_search_depth = 0
         self.run_time = 0
         self.cost = 0
+
+    def get_cost(self) -> int:
+        return self.cost
 

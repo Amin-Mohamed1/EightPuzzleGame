@@ -1,11 +1,9 @@
 import random
 import sys
 from functools import partial
-
 from PyQt5.QtWidgets import QDialog, QApplication
 from PyQt5.uic import loadUi
-
-from EightPuzzleGame.Logic.solver_factory import solve_puzzle
+from Logic.solver_factory import solve_puzzle
 
 
 class MainWindow(QDialog):
