@@ -2,7 +2,7 @@ import time
 
 from EightPuzzleGame.Logic.puzzle_solver import PuzzleSolver
 from typing import List
-from EightPuzzleGame.Logic.utils import is_solvable
+from EightPuzzleGame.Logic.utils import is_solvable, get_neighbors
 
 
 class BFSPuzzleSolver(PuzzleSolver):
@@ -51,15 +51,18 @@ class BFSPuzzleSolver(PuzzleSolver):
                 return i
         return -1
 
-    def __get_neighbors(self, state: int) -> list[int]:
-        empty_tile_position = self.__get_empty_tile_position(state)
-        directions = [1, -1, 3, -3]
-        neighbors = []
-        for direction in directions:
-            new_position = empty_tile_position + direction
-            if 0 <= new_position < 9:
-                neighbors.append(self.__swap_tiles(state, empty_tile_position, new_position))
-        return neighbors
+    # def __get_neighbors(self, state: int) -> list[int]:
+    #     empty_tile_position = self.__get_empty_tile_position(state)
+    #     directions = [1, -1, 3, -3]
+    #     neighbors = []
+    #     for direction in directions:
+    #         new_position = empty_tile_position + direction
+    #         if 0 <= new_position < 9:
+    #             neighbors.append(self.__swap_tiles(state, empty_tile_position, new_position))
+    #     return neighbors
+    #
+    # def __is_valid_swap(self, state: int, new_state: int, zero_pos: int)-> bool:
+    #     pass
 
     def __swap_tiles(self, state: int, source: int, destination: int) -> int:
         flat_state = [int(digit) for digit in str(state).zfill(9)]
@@ -75,7 +78,7 @@ class BFSPuzzleSolver(PuzzleSolver):
         for _ in range(queue_size):
             current_state = self.queue.pop(0)  # Dequeue the first element from the queue
             self.num_nodes += 1
-            neighbor_states = self.__get_neighbors(current_state)
+            neighbor_states = get_neighbors(current_state)
             for neighbor_states in neighbor_states:
                 if neighbor_states not in self.explored_set:
                     self.explored_set.add(neighbor_states)

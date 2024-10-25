@@ -1,14 +1,15 @@
-from typing import List, Tuple, Dict
 import time
-from EightPuzzleGame.Logic.utils import *
+from typing import Tuple, Dict
+
 from EightPuzzleGame.Logic.puzzle_solver import PuzzleSolver
+from EightPuzzleGame.Logic.utils import *
 
 
 class IDSPuzzleSolver(PuzzleSolver):
 
-    def __init__(self, initial_state: int):
+    def __init__(self, game_initial_state: int):
         """Initialize the DFS Puzzle Solver with the given initial state."""
-        super().__init__(initial_state)
+        super().__init__(game_initial_state)
 
     def solve(self) -> None:
         if not is_solvable(self.initial_state):
@@ -25,49 +26,54 @@ class IDSPuzzleSolver(PuzzleSolver):
             self.frontier_set = set()
             self.explored_set = set()
             stack_frontier: List[Tuple[int, int]] = [(self.initial_state, 0)]
-            self.frontier_set.add(self.initial_state)
-            child_parent_map: Dict[int, int] = {}
+            self.frontier_set.add(str(self.initial_state * 10))
+            child_parent_map: Dict[Tuple[int, int], Tuple[int, int]] = {(self.initial_state, 0): (-1, -1)}
 
             self.solution_path = self.depth_limited_search(depth_limit, stack_frontier, child_parent_map)
             if len(self.solution_path) != 0:
-                # print(depth_limit)
                 self.run_time = time.perf_counter() - timer_started
                 self.cost = len(self.solution_path) - 1
-                self.max_search_depth = len(self.solution_path) - 1
+                self.max_search_depth = depth_limit
                 return
             else:
                 depth_limit += 1
 
     def depth_limited_search(self, depth_limit: int, stack_frontier: List[Tuple[int, int]],
-                             child_parent_map: Dict[int, int]) -> list[int]:
+                             child_parent_map) -> list[int]:
         while stack_frontier:
             state, depth = stack_frontier.pop()
-            self.frontier_set.remove(state)
-            self.explored_set.add(state)
+            hash_state = str(state) + str(depth)
+            self.frontier_set.remove(hash_state)
+            self.explored_set.add(hash_state)
             self.num_nodes += 1
 
             if state == self.goal_state:
-                self.solution_path = self.get_path(child_parent_map, state)
+                self.get_path(state, child_parent_map, depth)
                 return self.solution_path
 
             if depth < depth_limit:
                 self.expand_state(state, stack_frontier, depth, child_parent_map)
+        return []
 
-        return self.solution_path
+    # def get_path(self, child_parent_map: Dict[int, int], goal_state: int) -> List[int]:
+    #     """Reconstruct the solution path from the goal state back to the initial state."""
+    #     path = []
+    #     current_state = 12345678
+    #
+    #     while current_state in child_parent_map:
+    #         path.append(current_state)
+    #         current_state = child_parent_map[current_state]
+    #
+    #     path.append(self.initial_state)
+    #     path.reverse()
+    #
+    #     return path
 
-    def get_path(self, child_parent_map: Dict[int, int], goal_state: int) -> List[int]:
-        """Reconstruct the solution path from the goal state back to the initial state."""
-        path = []
-        current_state = 12345678
-
-        while current_state in child_parent_map:
-            path.append(current_state)
-            current_state = child_parent_map[current_state]
-
-        path.append(self.initial_state)
-        path.reverse()
-
-        return path
+    def get_path(self, current_state: int, child_parent_map, depth: int):
+        state = (current_state, depth)
+        while state != (-1, -1):
+            self.solution_path.insert(0, state[0])
+            state = child_parent_map[state]
 
     def expand_state(self, state: int, stack: List[Tuple[int, int]],
                      current_depth: int, child_parent_map: Dict[int, int]) -> None:
@@ -75,10 +81,11 @@ class IDSPuzzleSolver(PuzzleSolver):
         for neighbor in get_neighbors(state):
             # Check if the neighbor is already in explored_set or stack_frontier
             # if neighbor not in self.explored_set and not any(neighbor == s[0] for s in stack):
-            if neighbor not in self.explored_set and neighbor not in self.frontier_set:
+            neighbor_with_depth = str(neighbor) + str(current_depth + 1)  # memo
+            if (neighbor_with_depth not in self.explored_set) and (neighbor_with_depth not in self.frontier_set):
                 stack.append((neighbor, current_depth + 1))
-                self.frontier_set.add(neighbor)
-                child_parent_map[neighbor] = state
+                self.frontier_set.add(neighbor_with_depth)
+                child_parent_map[(neighbor, current_depth + 1)] = (state, current_depth)
 
     def reset_solver(self) -> None:
         """Reset solver attributes if the puzzle is determined to be unsolvable."""

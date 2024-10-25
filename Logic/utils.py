@@ -16,7 +16,7 @@ def swap(state: int, empty_pos: int, new_pos: int) -> int:
 
 def get_neighbors(state: int) -> List[int]:
     """Generate valid neighbor states by moving the empty tile (0)."""
-    neighbors = []
+    neighbors_list = []
     zero_pos = find_empty_tile(state)
     row, col = divmod(zero_pos, 3)
     directions = [(0, -1), (1, 0), (-1, 0), (0, 1)]
@@ -38,9 +38,20 @@ def get_neighbors(state: int) -> List[int]:
         if 0 <= new_row < 3 and 0 <= new_col < 3:
             new_zero_pos = new_row * 3 + new_col
             new_state = swap(state, zero_pos, new_zero_pos)
-            neighbors.append(new_state)
+            neighbors_list.append(new_state)
 
-    return neighbors
+    return neighbors_list
+
+
+# def get_neighbors(state: int) -> list[int]:
+#     zero_pos = find_empty_tile(state)
+#     directions = [1, -1, 3, -3]
+#     neighbors_list = []
+#     for direction in directions:
+#         new_position = zero_pos + direction
+#         if 0 <= new_position < 9:
+#             neighbors_list.append(swap(state, zero_pos, new_position))
+#     return neighbors_list
 
 
 def count_inversions(state: int) -> int:
@@ -61,7 +72,7 @@ def is_solvable(state: int) -> bool:
 
 
 if __name__ == "__main__":
-    initial_state = 12345678
+    initial_state = 123405678
     empty_tile_position = find_empty_tile(initial_state)
     print(f"Empty tile position: {empty_tile_position}")
 
