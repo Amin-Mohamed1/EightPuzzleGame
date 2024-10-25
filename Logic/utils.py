@@ -47,10 +47,10 @@ def count_inversions(state: int) -> int:
     """Count the number of inversions in the puzzle state (integer representation)."""
     state_str = str(state).zfill(9)
     flat_state = [int(tile) for tile in state_str if tile != '0']
-    inversions = sum(1 for i in range(len(flat_state))
-                     for j in range(i + 1, len(flat_state))
-                     if flat_state[i] > flat_state[j])
-    return inversions
+    inversion_nums = sum(1 for i in range(len(flat_state))
+                         for j in range(i + 1, len(flat_state))
+                         if flat_state[i] > flat_state[j])
+    return inversion_nums
 
 
 def is_solvable(state: int) -> bool:

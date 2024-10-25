@@ -1,7 +1,7 @@
 from typing import List, Tuple, Dict
 import time
-from Logic.puzzle_solver import PuzzleSolver
-from Logic.utils import get_neighbors, is_solvable
+from EightPuzzleGame.Logic.puzzle_solver import PuzzleSolver
+from EightPuzzleGame.Logic.utils import get_neighbors, is_solvable
 
 
 class DFSPuzzleSolver(PuzzleSolver):

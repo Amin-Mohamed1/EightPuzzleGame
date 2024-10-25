@@ -1,7 +1,7 @@
 from typing import List, Tuple, Dict
 import time
-from Logic.utils import *
-from Logic.puzzle_solver import PuzzleSolver
+from EightPuzzleGame.Logic.utils import *
+from EightPuzzleGame.Logic.puzzle_solver import PuzzleSolver
 
 
 class IDSPuzzleSolver(PuzzleSolver):

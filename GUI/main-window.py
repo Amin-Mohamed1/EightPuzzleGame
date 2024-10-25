@@ -1,8 +1,10 @@
 import random
 import sys
 from functools import partial
-from PyQt5.QtWidgets import QDialog, QApplication, QButtonGroup
+
+from PyQt5.QtWidgets import QDialog, QApplication
 from PyQt5.uic import loadUi
+
 from EightPuzzleGame.Logic.solver_factory import solve_puzzle
 
 
@@ -52,18 +54,19 @@ class MainWindow(QDialog):
         self.coloring_board()
 
     def get_buttons_data(self):
-        data = []
+        data = 0
         for i in range(3):
-            row = []
             for j in range(3):
-                row.append(int(self.current_state[i][j].text()))
-            data.append(row)
+                data = data * 10 + int(self.current_state[i][j].text())
         return data
 
-    def add_data_to_buttons(self, data: list[list[int]]):
+    def add_data_to_buttons(self, data: int):
+        str_data = str(data).zfill(9)
+        pointer = 0
         for i in range(3):
             for j in range(3):
-                self.current_state[i][j].setText(str(data[i][j]))
+                self.current_state[i][j].setText(str_data[pointer])
+                pointer += 1
 
     def swap_pages(self, algorithms: bool):
         if algorithms:
