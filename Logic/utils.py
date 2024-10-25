@@ -20,18 +20,6 @@ def get_neighbors(state: int) -> List[int]:
     zero_pos = find_empty_tile(state)
     row, col = divmod(zero_pos, 3)
     directions = [(0, -1), (1, 0), (-1, 0), (0, 1)]
-    # (0, 1), (0, -1), (1, 0), (-1, 0)
-    # (0, 1), (1, 0), (0, -1), (-1, 0)
-    # (0, 1), (-1, 0), (0, -1), (1, 0)
-    # (0, 1), (0, -1), (-1, 0), (1, 0)
-    # (1, 0), (0, 1), (0, -1), (-1, 0)
-    # (1, 0), (0, -1), (0, 1), (-1, 0)
-    # (0, -1), (-1, 0), (1, 0), (0, 1)
-    # (0, -1), (1, 0), (0, 1), (-1, 0)
-    # (0, -1), (0, 1), (1, 0), (-1, 0)
-    # (0, -1), (0, 1), (-1, 0), (1, 0)
-    # (0, -1), (-1, 0), (0, 1), (1, 0)
-    # (0, -1), (1, 0), (-1, 0), (0, 1)
 
     for direction in directions:
         new_row, new_col = row + direction[0], col + direction[1]
@@ -43,21 +31,10 @@ def get_neighbors(state: int) -> List[int]:
     return neighbors_list
 
 
-# def get_neighbors(state: int) -> list[int]:
-#     zero_pos = find_empty_tile(state)
-#     directions = [1, -1, 3, -3]
-#     neighbors_list = []
-#     for direction in directions:
-#         new_position = zero_pos + direction
-#         if 0 <= new_position < 9:
-#             neighbors_list.append(swap(state, zero_pos, new_position))
-#     return neighbors_list
-
-
 def count_inversions(state: int) -> int:
     """Count the number of inversions in the puzzle state (integer representation)."""
-    state_str = str(state).zfill(9)
-    flat_state = [int(tile) for tile in state_str if tile != '0']
+    # state_str = str(state).zfill(9)
+    flat_state = [int(tile) for tile in str(state) if tile != '0']
     inversion_nums = sum(1 for i in range(len(flat_state))
                          for j in range(i + 1, len(flat_state))
                          if flat_state[i] > flat_state[j])
@@ -71,16 +48,16 @@ def is_solvable(state: int) -> bool:
     return count_inversions(state) % 2 == 0
 
 
-if __name__ == "__main__":
-    initial_state = 123405678
-    empty_tile_position = find_empty_tile(initial_state)
-    print(f"Empty tile position: {empty_tile_position}")
-
-    neighbors = get_neighbors(initial_state)
-    print(f"Neighbors of {initial_state}: {neighbors}")
-
-    inversions = count_inversions(initial_state)
-    print(f"Number of inversions in {initial_state}: {inversions}")
-
-    solvable = is_solvable(initial_state)
-    print(f"Is the puzzle solvable? {'Yes' if solvable else 'No'}")
+# if __name__ == "__main__":
+#     initial_state = 123405678
+#     empty_tile_position = find_empty_tile(initial_state)
+#     print(f"Empty tile position: {empty_tile_position}")
+#
+#     neighbors = get_neighbors(initial_state)
+#     print(f"Neighbors of {initial_state}: {neighbors}")
+#
+#     inversions = count_inversions(initial_state)
+#     print(f"Number of inversions in {initial_state}: {inversions}")
+#
+#     solvable = is_solvable(initial_state)
+#     print(f"Is the puzzle solvable? {'Yes' if solvable else 'No'}")

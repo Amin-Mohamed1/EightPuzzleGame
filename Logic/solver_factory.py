@@ -1,11 +1,11 @@
-from typing import List
 # from Logic.astar_solver import AStarPuzzleSolver
-from EightPuzzleGame.Logic.bfs_solver import BFSPuzzleSolver
-from EightPuzzleGame.Logic.dfs_solver import DFSPuzzleSolver
-from EightPuzzleGame.Logic.ids_solver import IDSPuzzleSolver
-
-
+# from EightPuzzleGame.Logic.bfs_solver import BFSPuzzleSolver
+# from EightPuzzleGame.Logic.dfs_solver import DFSPuzzleSolver
+# from EightPuzzleGame.Logic.ids_solver import IDSPuzzleSolver
 # from Logic.heuristics import manhattan_heuristic, euclidean_heuristic, misplaced_tiles_heuristic
+from Logic.bfs_solver import BFSPuzzleSolver
+from Logic.dfs_solver import DFSPuzzleSolver
+from Logic.ids_solver import IDSPuzzleSolver
 
 
 def solve_puzzle(method_name: str, game_initial_state: int) -> dict:
@@ -35,7 +35,7 @@ def solve_puzzle(method_name: str, game_initial_state: int) -> dict:
 
 
 if __name__ == "__main__":
-    initial_state = 725310648
+    initial_state = 806547231
     result = solve_puzzle("IDSPuzzleSolver", initial_state)
     print("Solution Path:", result['solution_path'])
     print("Runtime:", result['runtime'])

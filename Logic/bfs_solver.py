@@ -1,8 +1,9 @@
-import time
-
-from EightPuzzleGame.Logic.puzzle_solver import PuzzleSolver
+# from EightPuzzleGame.Logic.puzzle_solver import PuzzleSolver
+# from EightPuzzleGame.Logic.utils import is_solvable, get_neighbors
 from typing import List
-from EightPuzzleGame.Logic.utils import is_solvable, get_neighbors
+import time
+from Logic.puzzle_solver import PuzzleSolver
+from Logic.utils import *
 
 
 class BFSPuzzleSolver(PuzzleSolver):

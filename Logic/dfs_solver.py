@@ -1,7 +1,9 @@
-from typing import List, Tuple, Dict
 import time
-from EightPuzzleGame.Logic.puzzle_solver import PuzzleSolver
-from EightPuzzleGame.Logic.utils import get_neighbors, is_solvable
+from typing import Tuple, Dict
+from Logic.puzzle_solver import PuzzleSolver
+from Logic.utils import *
+# from EightPuzzleGame.Logic.puzzle_solver import PuzzleSolver
+# from EightPuzzleGame.Logic.utils import get_neighbors, is_solvable
 
 
 class DFSPuzzleSolver(PuzzleSolver):
@@ -51,8 +53,8 @@ class DFSPuzzleSolver(PuzzleSolver):
         """Expand the current state by finding its valid neighbors and add them to the stack."""
         for neighbor in get_neighbors(state):
             # Check if the neighbor is already in explored_set or stack_frontier
-            if neighbor not in self.explored_set and not any(neighbor == s[0] for s in stack):
-                # if neighbor not in self.explored_set and neighbor not in self.frontier_set:
+            # if neighbor not in self.explored_set and not any(neighbor == s[0] for s in stack):
+            if neighbor not in self.explored_set and neighbor not in self.frontier_set:
                 stack.append((neighbor, current_depth + 1))
                 self.frontier_set.add(neighbor)
                 child_parent_map[neighbor] = state
