@@ -37,7 +37,7 @@ class IDSPuzzleSolver(PuzzleSolver):
                 depth_limit += 1
 
     def depth_limited_search(self, depth_limit: int, stack_frontier: List[Tuple[int, int]],
-                             child_parent_map: Dict[Tuple[int, int], Tuple[int, int]]) -> list[int]:
+                            child_parent_map: Dict[Tuple[int, int], Tuple[int, int]]) -> list[int]:
         while stack_frontier:
             state, depth = stack_frontier.pop()
             self.frontier_set.remove((state, depth))
