@@ -19,7 +19,7 @@ def get_neighbors(state: int) -> List[int]:
     neighbors_list = []
     zero_pos = find_empty_tile(state)
     row, col = divmod(zero_pos, 3)
-    directions = [(0, -1), (1, 0), (-1, 0), (0, 1)]
+    directions = [(0, 1), (1, 0), (0, -1), (-1, 0)]
 
     for direction in directions:
         new_row, new_col = row + direction[0], col + direction[1]
@@ -49,15 +49,42 @@ def is_solvable(state: int) -> bool:
 
 
 # if __name__ == "__main__":
-#     initial_state = 123405678
-#     empty_tile_position = find_empty_tile(initial_state)
-#     print(f"Empty tile position: {empty_tile_position}")
-#
-#     neighbors = get_neighbors(initial_state)
-#     print(f"Neighbors of {initial_state}: {neighbors}")
-#
-#     inversions = count_inversions(initial_state)
-#     print(f"Number of inversions in {initial_state}: {inversions}")
-#
-#     solvable = is_solvable(initial_state)
-#     print(f"Is the puzzle solvable? {'Yes' if solvable else 'No'}")
+    # initial_state = 123405678
+    # empty_tile_position = find_empty_tile(initial_state)
+    # print(f"Empty tile position: {empty_tile_position}")
+    #
+    # neighbors = get_neighbors(initial_state)
+    # print(f"Neighbors of {initial_state}: {neighbors}")
+    #
+    # inversions = count_inversions(initial_state)
+    # print(f"Number of inversions in {initial_state}: {inversions}")
+    #
+    # solvable = is_solvable(initial_state)
+    # print(f"Is the puzzle solvable? {'Yes' if solvable else 'No'}")
+
+
+
+# OTHER DIRECTIONS
+    # directions = [(1, 0), (-1, 0), (0, 1), (0, -1)]
+    # directions = [(1, 0), (-1, 0), (0, -1), (0, 1)]
+    # directions = [(1, 0), (0, 1), (-1, 0), (0, -1)]
+    # directions = [(1, 0), (0, 1), (0, -1), (-1, 0)]
+    # directions = [(1, 0), (0, -1), (-1, 0), (0, 1)]
+    # directions = [(1, 0), (0, -1), (0, 1), (-1, 0)]
+    # directions = [(-1, 0), (1, 0), (0, 1), (0, -1)]
+    # directions = [(-1, 0), (1, 0), (0, -1), (0, 1)]
+    # directions = [(-1, 0), (0, 1), (1, 0), (0, -1)]
+    # directions = [(-1, 0), (0, 1), (0, -1), (1, 0)]
+    # directions = [(-1, 0), (0, -1), (1, 0), (0, 1)]
+    # directions = [(-1, 0), (0, -1), (0, 1), (1, 0)]
+    # directions = [(0, 1), (1, 0), (-1, 0), (0, -1)]
+    # directions = [(0, 1), (-1, 0), (1, 0), (0, -1)]
+    # directions = [(0, 1), (-1, 0), (0, -1), (1, 0)]
+    # directions = [(0, 1), (0, -1), (1, 0), (-1, 0)]
+    # directions = [(0, 1), (0, -1), (-1, 0), (1, 0)]
+    # directions = [(0, -1), (1, 0), (-1, 0), (0, 1)]
+    # directions = [(0, -1), (1, 0), (0, 1), (-1, 0)]
+    # directions = [(0, -1), (-1, 0), (1, 0), (0, 1)]
+    # directions = [(0, -1), (-1, 0), (0, 1), (1, 0)]
+    # directions = [(0, -1), (0, 1), (1, 0), (-1, 0)]
+    # directions = [(0, -1), (0, 1), (-1, 0), (1, 0)]

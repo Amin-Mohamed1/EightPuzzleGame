@@ -31,9 +31,23 @@ def solve_puzzle(method_name: str, game_initial_state: int) -> dict:
     }
 
 
+# 806547231
+# 641302758
+# 158327064
+# 328451670
+# 035428617
+# 725310648
+
+# "AStarManhattan"
+# "AStarEuclidean"
+# "AStarMisplacedTiles"
+# "BFSPuzzleSolver"
+# "DFSPuzzleSolver"
+# "IDSPuzzleSolver"
+
 # if __name__ == "__main__":
-#     initial_state = 806547231
-#     result = solve_puzzle("AStarMisplacedTiles", initial_state)
+#     initial_state = 725310648
+#     result = solve_puzzle("AStarEuclidean", initial_state)
 #     print("Solution Path:", result['solution_path'])
 #     print("Runtime:", result['runtime'])
 #     print("Depth:", result['depth'])

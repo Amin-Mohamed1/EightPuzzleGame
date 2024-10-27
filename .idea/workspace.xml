@@ -5,12 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cc1c50d7-3d56-49fd-9cfe-c5f3bb97b6ad" name="Changes" comment="Initial Commit">
-      <change beforePath="$PROJECT_DIR$/.idea/Eight Puzzle.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Eight Puzzle.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/main-window.py" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/main-window.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Logic/astar_solver.py" beforeDir="false" afterPath="$PROJECT_DIR$/Logic/astar_solver.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logic/ids_solver.py" beforeDir="false" afterPath="$PROJECT_DIR$/Logic/ids_solver.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Logic/bfs_solver.py" beforeDir="false" afterPath="$PROJECT_DIR$/Logic/bfs_solver.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Logic/dfs_solver.py" beforeDir="false" afterPath="$PROJECT_DIR$/Logic/dfs_solver.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Logic/solver_factory.py" beforeDir="false" afterPath="$PROJECT_DIR$/Logic/solver_factory.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Logic/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/Logic/utils.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,7 +68,7 @@
       <recent name="C:\Users\Yousef\Desktop\Eight Puzzle\Logic" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.main-window">
+  <component name="RunManager" selected="Python.solver_factory">
     <configuration name="ids_solver" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Eight Puzzle" />
       <option name="ENV_FILES" value="" />
@@ -180,11 +181,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.main-window" />
         <item itemvalue="Python.solver_factory" />
+        <item itemvalue="Python.main-window" />
+        <item itemvalue="Python.utils" />
         <item itemvalue="Python.ids_solver" />
         <item itemvalue="Python.tester" />
-        <item itemvalue="Python.utils" />
       </list>
     </recent_temporary>
   </component>
