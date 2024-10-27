@@ -69,7 +69,6 @@ class AStarPuzzleSolver(PuzzleSolver):
                 temp = self.map_of_costs[neighbor]
                 if new_cost < temp:
                     heap = [(cost, state) for cost, state in heap if state != neighbor]
-                    self.frontier_set.add(neighbor)
                     self.map_of_costs[neighbor] = new_cost
                     heapq.heappush(heap, (new_cost, neighbor))
                     child_parent_map[neighbor] = state

@@ -33,7 +33,6 @@ def get_neighbors(state: int) -> List[int]:
 
 def count_inversions(state: int) -> int:
     """Count the number of inversions in the puzzle state (integer representation)."""
-    # state_str = str(state).zfill(9)
     flat_state = [int(tile) for tile in str(state) if tile != '0']
     inversion_nums = sum(1 for i in range(len(flat_state))
                          for j in range(i + 1, len(flat_state))

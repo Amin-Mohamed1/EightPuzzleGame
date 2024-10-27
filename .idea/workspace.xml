@@ -6,10 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="cc1c50d7-3d56-49fd-9cfe-c5f3bb97b6ad" name="Changes" comment="Initial Commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/main-window.py" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/main-window.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Logic/astar_solver.py" beforeDir="false" afterPath="$PROJECT_DIR$/Logic/astar_solver.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logic/bfs_solver.py" beforeDir="false" afterPath="$PROJECT_DIR$/Logic/bfs_solver.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logic/dfs_solver.py" beforeDir="false" afterPath="$PROJECT_DIR$/Logic/dfs_solver.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Logic/solver_factory.py" beforeDir="false" afterPath="$PROJECT_DIR$/Logic/solver_factory.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Logic/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/Logic/utils.py" afterDir="false" />
     </list>
