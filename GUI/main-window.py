@@ -107,7 +107,7 @@ class MainWindow(QDialog):
         self.progress_dialog.setWindowTitle("Please Wait")
         self.progress_dialog.setWindowModality(Qt.WindowModal)
         self.progress_dialog.setMinimumDuration(0)
-        self.progress_dialog.setValue(0)
+        self.progress_dialog.setValue(20)
         self.progress_dialog.setFixedSize(300, 100)
 
         QApplication.processEvents()

@@ -5,8 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cc1c50d7-3d56-49fd-9cfe-c5f3bb97b6ad" name="Changes" comment="Initial Commit">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/8-Game-Window.ui" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/8-Game-Window.ui" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GUI/main-window.py" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/main-window.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
