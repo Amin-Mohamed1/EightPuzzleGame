@@ -23,6 +23,7 @@ class MainWindow(QDialog):
 
         self.manhattan_radio.setChecked(True)
         self.progress_dialog = None
+        self.play_button.hide()
 
         self.random_button.clicked.connect(self.randomize)
         self.submit_button.clicked.connect(self.read_input)
@@ -57,6 +58,8 @@ class MainWindow(QDialog):
 
     def read_input(self):
         self.swap_pages(True)
+        if not self.input_field.text():
+            return
         user_input = self.input_field.text().replace(" ", "").split(',')
         for i in range(3):
             for j in range(3):
