@@ -1,9 +1,10 @@
-import time
 import heapq
-from math import ceil
+import time
 from typing import Callable, Dict
+
 from Logic.puzzle_solver import PuzzleSolver
 from Logic.utils import *
+
 
 class AStarPuzzleSolver(PuzzleSolver):
     def __init__(self, initial_state: int, heuristic: Callable[[int], float]):
@@ -20,7 +21,7 @@ class AStarPuzzleSolver(PuzzleSolver):
         if not is_solvable(self.initial_state):
             self.reset_solver()
             return
-        
+
         timer_started = time.perf_counter()
         self.current_cost = self.heuristic(self.initial_state) + self.cost
         heap = [(self.current_cost, self.initial_state)]
@@ -37,7 +38,7 @@ class AStarPuzzleSolver(PuzzleSolver):
 
             if state == self.goal_state:
                 self.solution_path = self.get_path(child_parent_map, state)
-                self.cost = len(self.solution_path)-1
+                self.cost = len(self.solution_path) - 1
                 self.num_nodes = len(self.explored_set)
                 break
 
@@ -54,7 +55,7 @@ class AStarPuzzleSolver(PuzzleSolver):
         self.cost = 0
 
     def expand_state(self, state: int, heap: List[tuple[float, int]],
-                     current_depth: int,child_parent_map: Dict[int, int]) -> None:
+                     current_depth: int, child_parent_map: Dict[int, int]) -> None:
         """Expand the current state by finding its valid neighbors and add them to the heap."""
         for neighbor in get_neighbors(state):
             self.g_cost[neighbor] = current_depth + 1
@@ -106,4 +107,3 @@ class AStarPuzzleSolver(PuzzleSolver):
     def get_cost(self) -> int:
         """Return the cost of steps taken to solve the puzzle."""
         return int(self.cost)
-

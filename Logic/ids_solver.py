@@ -3,6 +3,7 @@ from typing import Tuple, Dict, List
 from Logic.puzzle_solver import PuzzleSolver
 from Logic.utils import *
 
+
 class IDSPuzzleSolver(PuzzleSolver):
 
     def __init__(self, game_initial_state: int):
@@ -37,7 +38,7 @@ class IDSPuzzleSolver(PuzzleSolver):
                 depth_limit += 1
 
     def depth_limited_search(self, depth_limit: int, stack_frontier: List[Tuple[int, int]],
-                            child_parent_map: Dict[Tuple[int, int], Tuple[int, int]]) -> list[int]:
+                             child_parent_map: Dict[Tuple[int, int], Tuple[int, int]]) -> list[int]:
         while stack_frontier:
             state, depth = stack_frontier.pop()
             self.frontier_set.remove((state, depth))
@@ -65,7 +66,7 @@ class IDSPuzzleSolver(PuzzleSolver):
         for neighbor in get_neighbors(state):
             neighbor_with_depth = (neighbor, current_depth + 1)
             if (neighbor_with_depth not in self.explored_set) and (neighbor_with_depth not in self.frontier_set):
-            # if neighbor_with_depth[1] < limit:
+                # if neighbor_with_depth[1] < limit:
                 stack.append((neighbor, current_depth + 1))
                 self.frontier_set.add(neighbor_with_depth)
                 child_parent_map[neighbor_with_depth] = (state, current_depth)
